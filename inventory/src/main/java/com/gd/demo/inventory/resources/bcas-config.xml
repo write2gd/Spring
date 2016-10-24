@@ -7,7 +7,7 @@
 			http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
 	<context:annotation-config />
-	<context:component-scan base-package="ec.bcas.gdapp" />
+	<context:component-scan base-package="com.gd.demo.inventory." />
 	<mvc:annotation-driven />
 	<mvc:resources mapping="/css/**" location="/css/" />
 	<mvc:resources mapping="/images/**" location="/images/" />
@@ -16,7 +16,7 @@
 	<mvc:resources mapping="/gdcryptoresources/**" location="/gdcryptoresources/" />
 	<mvc:resources mapping="/service/**" location="/service/**" />
 	<!-- <mvc:interceptors>
-		<bean class="ec.bcas.gdapp.spring.Action.BcasInterceptor" />
+		<bean class="Action.Interceptor" />
 	</mvc:interceptors>
  -->
 	<bean id="messageSource"
@@ -37,8 +37,8 @@
 		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
 		<property name="definitions">
 			<list>
-				<value>classpath*:ec/bcas/gdapp/resources/templateDefinations.xml</value>
-					<value>classpath*:ec/bcas/gdapp/resources/viewDefinations.xml</value>
+				<value>classpath*:resources/templateDefinations.xml</value>
+					<value>classpath*:resources/viewDefinations.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -53,27 +53,27 @@
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>
 		</property>
-		<property name="packagesToScan" value="ec.bcas.gdapp.spring.Database"></property>
+		<property name="packagesToScan" value="Database"></property>
 	</bean>
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="bcassessionFactory"></property>
 	</bean>
 	<!-- <bean id="ds" class="org.springframework.jndi.JndiObjectFactoryBean" 
-		scope="singleton" lazy-init="true"> <property name="jndiName" value="BCAS"/> 
+		scope="singleton" lazy-init="true"> <property name="jndiName" value="GD"/> 
 		</bean> -->
 	<bean id="ds"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="net.sourceforge.jtds.jdbc.Driver" />
 		<property name="url"
-			value="jdbc:jtds:sqlserver://172.18.12.169:1433;databaseName=BCAS_GD" />
+			value="jdbc:jtds:sqlserver://172.18.12.1:1433;databaseName=Invent_GD" />
 		<property name="username" value="sa" />
-		<property name="password" value="sa@123" />
+		<property name="password" value="test" />
 	</bean>
-	 <bean id="userDao" class="ec.bcas.gdapp.hibernet.daoImpl.UserDaoStub">
+	 <bean id="userDao" class="daoImpl.UserDaoStub">
 		<property name="sessionFactory" ref="bcassessionFactory" />
 	</bean>
-	<bean id="gdDaoAuthenticationService" class="ec.bcas.gdapp.spring.boImpl.AuthenticationService">
+	<bean id="gdDaoAuthenticationService" class="boImpl.AuthenticationService">
   <property name="userdao" ref="userDao"/>
    </bean>
 <bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"></bean>
