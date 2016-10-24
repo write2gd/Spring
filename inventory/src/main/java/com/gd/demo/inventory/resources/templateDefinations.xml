@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+	<definition name="main" template="/WEB-INF/templates/mainTemplate.jsp">
+		<put-attribute name="header" value="/WEB-INF/templates/header.jsp" />
+		<put-attribute name="jsFile" value="app.jsFiles" />
+		<put-attribute name="menu" value="app.menu" />
+	</definition>
+	<definition name="loginpop" template="/WEB-INF/templates/loginTemplate.jsp">
+		<put-attribute name="jsFile" value="app.jsFiles" />
+
+	</definition>
+	<definition name="app.jsFiles" template="/WEB-INF/templates/jsLayout.jsp">
+		<put-list-attribute name="jsFiles">			
+			<add-attribute value="/scripts/template.js" />
+			<add-attribute value="/scripts/jquery.js" />
+			<add-attribute value="/gdcryptoresources/js/jQuery/jquery.blockUI.js" />			
+			<add-attribute value="/scripts/jquery.easyui.min.js" />
+			<add-attribute value="/scripts/jquery.tablesorter.js" />
+			<add-attribute value="/scripts/jPages.js" />
+			<add-attribute value="/scripts/naver.js" />
+			<add-attribute value="/scripts/html5shiv.js" />
+		</put-list-attribute>
+	</definition>
+	<definition name="crypto" template="/WEB-INF/templates/mainTemplate.jsp">
+		<put-attribute name="header" value="/WEB-INF/templates/header.jsp" />
+		<put-attribute name="jsFile" value="app.jsCrypto" />
+		<put-attribute name="menu" value="app.menu" />
+	</definition>
+	<definition name="app.jsCrypto" template="/WEB-INF/templates/jsLayout.jsp">
+		<put-list-attribute name="jsFiles">
+			<add-attribute value="/scripts/template.js" />
+			<add-attribute value="/scripts/jquery.js" />
+			<add-attribute value="/gdcryptoresources/js/jquery.easydropdown.js" />
+			<add-attribute value="/gdcryptoresources/js/jQuery/jquery.cookie.js" />
+			<add-attribute value="/gdcryptoresources/js/jQuery/jquery.blockUI.js" />
+			<add-attribute value="/gdcryptoresources/js/gdcryptoscript.js" />
+			<add-attribute value="/gdcryptoresources/js/deployJava.js" />
+			<add-attribute value="/gdcryptoresources/js/checkjava.js" />
+			<add-attribute value="/gdcryptoresources/js/CryptoJS.js" />
+			<add-attribute value="/gdcryptoresources/js/GetHash.js" />
+			<add-attribute value="/gdcryptoresources/js/sha256-min.js" />
+			<add-attribute value="/gdcryptoresources/js/IdentifyBrowser.js" />
+			<add-attribute value="/gdcryptoresources/js/gdformjson.js" />
+			<add-attribute value="/gdcryptoresources/js/gdSign.js" />
+			<add-attribute value="/scripts/naver.js" />
+			<add-attribute value="/scripts/jquery.easyui.min.js" />
+				<add-attribute value="/scripts/jquery.tablesorter.js" />
+				<add-attribute value="/scripts/html5shiv.js" />
+		</put-list-attribute>
+	</definition>
+	<definition name="app.menu" template="/WEB-INF/templates/LeftMenu.jsp" preparer="ec.bcas.gdapp.spring.tiles.MenuPreparer">
+		<put-list-attribute name="menus" />
+	</definition>
+		<!-- Administration -->
+	<definition name="administration" extends="main">
+		<put-attribute name="menu" value="app.menu.administration" />
+	</definition>
+
+	<!-- Signature -->
+	<definition name="signature" extends="main">
+		<put-attribute name="content" value="/WEB-INF/jsp/signature.jsp" />
+		<put-attribute name="jsFile" value="app.signature.jsfiles" />
+	</definition>
+
+</tiles-definitions>

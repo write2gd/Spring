@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+	<definition name="mapcertificate" extends="crypto">
+		<put-attribute name="content" value="/WEB-INF/jsp/gdcrypto.jsp" />
+	</definition>
+<definition name="certmapped" extends="main">
+		<put-attribute name="content" value="/WEB-INF/jsp/certmap.jsp" />
+	</definition>
+	
+	<definition name="login" extends="loginpop">
+		<put-attribute name="content" value="/WEB-INF/jsp/login.jsp" />
+	</definition>
+	<definition name="denied" extends="loginpop">
+		<put-attribute name="content" value="/WEB-INF/jsp/denied.jsp" />
+	</definition>
+	<definition name="bcasfailed" extends="loginpop">
+		<put-attribute name="content" value="/WEB-INF/jsp/bcasfailed.jsp" />
+	</definition>
+	<definition name="bcaslogout" extends="loginpop">
+		<put-attribute name="content" value="/WEB-INF/jsp/bcas-logout.jsp" />
+	</definition>
+	
+		<definition name="login-error" extends="loginpop">
+		<put-attribute name="content" value="/WEB-INF/jsp/login-error.jsp" />
+	</definition>
+	<definition name="home" extends="main">
+		<put-attribute name="content" value="/WEB-INF/jsp/home.jsp" />
+	</definition>
+	
+	<definition name="server" extends="main">
+		<put-attribute name="content" value="/WEB-INF/jsp/server.jsp" />
+	</definition>
+	<definition name="addserver" extends="crypto">
+		<put-attribute name="content" value="/WEB-INF/jsp/AddServer.jsp" />
+	</definition>
+	<definition name="editserver" extends="crypto">
+		<put-attribute name="content" value="/WEB-INF/jsp/editServer.jsp" />
+	</definition>
+	<definition name="addHinventory" extends="main">
+		<put-attribute name="content" value="/WEB-INF/jsp/addHInventory.jsp" />
+	</definition>
+	<definition name="viewHinventory" extends="main">
+		<put-attribute name="content" value="/WEB-INF/jsp/viewHInventory.jsp" />
+	</definition>
+	<definition name="editHinventory" extends="main">
+		<put-attribute name="content" value="/WEB-INF/jsp/editHInventory.jsp" />
+	</definition>
+	
+	<definition name="addSinventory" extends="main">
+		<put-attribute name="content" value="/WEB-INF/jsp/addSInventory.jsp" />
+	</definition>
+	<definition name="viewSinventory" extends="main">
+		<put-attribute name="content" value="/WEB-INF/jsp/viewSInventory.jsp" />
+	</definition>
+	<definition name="editSinventory" extends="main">
+		<put-attribute name="content" value="/WEB-INF/jsp/editSInventory.jsp" />
+	</definition>
+	
+	<definition name="addSAlocinventory" extends="crypto">
+		<put-attribute name="content" value="/WEB-INF/jsp/addSAlocInventory.jsp" />
+	</definition>
+	<definition name="viewSAlocinventory" extends="main">
+		<put-attribute name="content" value="/WEB-INF/jsp/viewSAlocInventory.jsp" />
+	</definition>
+	<definition name="editSAlocinventory" extends="main">
+		<put-attribute name="content" value="/WEB-INF/jsp/editSAlocInventory.jsp" />
+	</definition>
+	
+
+<definition name="add_request" extends="crypto">
+		<put-attribute name="content" value="/WEB-INF/jsp/inventory_Request.jsp" />
+	</definition>
+</tiles-definitions>
